@@ -1,0 +1,33 @@
+Servlet:
+    - Servlet is an API which is used to build Web application
+    - Servlet is a piece of code which will be present inside Server.
+    - Servlet takes the Request, processes it and Produces the Response.
+    - Servlet is an Interface present inside javax.servlet package.
+    - We can create our own servlet by creating a Class and implementing it to Servlet Interface and overriding all the methods of Servlet.
+    - Our own main logic should be return inside service() method, because service() method is the one which takes Request and Produces Response.
+
+Methods of Servlet: 
+    1. public void init();
+    2. public void Servic(req,res);
+    3. public void destroy();
+    4. public ServletConfig getServletConfig();
+
+Generic Servlet:
+    - Generic Servlet is an abstract class present inside javax.Servlet package.
+    - It is a sub-Class of Servlet Interface.
+    - If we want to create our own servlet(Generic Servlet) we need to create a Class and extend that Class to Generic Servlet and override the Service() Method.
+        because in Generic servlet all the methods Servlet Interface is overriden except Service() method.
+    Servlet
+        ^
+        |
+        |
+    GenericServlet
+        ^
+        |
+    MyServlet
+
+Methods of GenericServlet:
+    1. ServletContext getServletContext()
+    2. public void Service(req,res); abstract method.
+    3. String getInitParameters()
+    4. String getInitParametersName()
