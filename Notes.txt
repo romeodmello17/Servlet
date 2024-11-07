@@ -31,3 +31,46 @@ Methods of GenericServlet:
     2. public void Service(req,res); abstract method.
     3. String getInitParameters()
     4. String getInitParametersName()
+
+Creating GenericServlet:
+
+Providing URL for Created Servlet:
+    - We can provide URL to the servlet using two ways:
+        1. using Servlet tag and servlet-mapping tag in web.xml
+        2. using @WebServlet("/URL") annotation in Java servlet Class.
+note: among two ways we have to follow anyone either using servlet tag or using @WebServlet() annotation, Dont use both.
+    - To Print content on the browser we use PrintWriter Object.
+
+HTTPServlet :
+    - HTTPServlet is an abstract sub-class of GenericServlet present inside javax.servlet.http package.
+    - Inside HTTPServlet all the methods of Servlet Interface has been overriden including Service() method.
+    - Then also they made it abstract to avoid direct Object creation.
+    - To create our own HTTPServlet, create a Class and extend that Class to HTTPServlet and override any one of the methods of HTTPServlet.
+    - HTTPServlet is used to handle HTTP Request and HTTP Response.
+    Servlet
+        ^
+        |
+        |
+    GenericServlet
+        ^
+        |
+    HTTPServlet
+        ^
+        |
+    MyServlet
+
+Methods of HTTPServlet :
+    1. public void Service(ServletRequest req, ServletRequest res)
+    2. protected void Service(HttpServletRequest req, HttpServletResponse res)
+    3. protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    4. protected void doGet(HttpServletRequest req, HttpServletResponse res)
+    5. protected void doPut(HttpServletRequest req, HttpServletResponse res)
+    6. protected void doDelete(HttpServletRequest req, HttpServletResponse res)
+    7. protected void doHead(HttpServletRequest req, HttpServletResponse res)
+
+
+Reading HTML form data inside HTTPServlet:
+    - To read HTML form data inside HttpServlet we need to provide URL of servlet inside form action="URL" and call req.getParameter(input field name) method by passing input field name.
+
+
+
