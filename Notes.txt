@@ -72,5 +72,71 @@ Methods of HTTPServlet :
 Reading HTML form data inside HTTPServlet:
     - To read HTML form data inside HttpServlet we need to provide URL of servlet inside form action="URL" and call req.getParameter(input field name) method by passing input field name.
 
+Reading the HTML form data inside doPost() method of HttpServlet:
+    - import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/new")
+public class NewServlet extends HttpServlet{
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Http Servlet is trigger");
+		
+		PrintWriter pw = resp.getWriter();
+		pw.print("<html><body>");
+		pw.print("<h1>This is HTTPServlet</h1>");
+		pw.print("<html><body>");
+		
+	}
+}
+
+index.jsp
+<html>
+<body>
+<h2><%= "Read form data" %></h2>
+	<form action="read" method="post">
+	Name : <input type="text" name="username" > <br>
+	Password : <input type="password" name="password"> <br>
+	<input type="submit" name="submit">
+	</form>
+</body>
+</html>
+
+    - To read HTML form data inside doGet() method of HttpServlet it not mandatory to mention method in HTML form.
+    - To read html form data inside dePost() method of HttpServlet it is mandatory to mention method="post" in HTML form.
 
 
+welcome-file-list :
+    Welcome file:
+        - The file which will be getting displayed when the application is started is known as welcome file.
+        - Bydefault index.html,index.htm,index.jsp will be considered as welcome-files.
+        - If we want to configure our own file as a welcome-file, we need to make use of <welcome-file-list> tag inside web.xml.
+        - Inside <welcome-file-list> we can configure multiple file as welcome file among them the one which is present from the top will considered as welcome file.
+        eg. :
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <welcome-file-list>
+  <welcome-file>register.html</welcome-file>
+  <welcome-file>test.html</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+How does Servlet works or working procedure of Servlet?
+    Diagram.
+
+    Request side parameters:
+    1. URL
+    2. Method type
+    3. data
+
+    Response side parameters:
+    1. Status code
+    2. content type
+    3. Actual content
