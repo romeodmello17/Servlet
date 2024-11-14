@@ -1,0 +1,29 @@
+JSP(Java Server Pages):
+    - JSP is a technology like servlet which is used to  built web application.
+    - JSP is a extension of servlet or advanced version of servlet, Which helps in developing web application by providing
+        key features like JSP tags , directives, implicit objects, expression language and so on.
+    - In servlet we used to write html code inside java, but in JSP we write java code inside html using JSP tags.
+    - Whenever we want to design a UI with some java code in it we go for JSP.
+    - It can be created with .jsp extension in webapp folder of maven project.
+    - We can pass the data from servlet to JSP and ask JSP to print it.
+
+Advantages of JSP :
+    - All the features of servlet can be used inside JSP.
+    - We don't need to restart the server everytime we do changes in JSP.
+    - It is easy to maintain JSP as compare to servlet.
+
+JSP tags :
+    - Whenever we want to write some java code inside JSP , We make use of jsp tags.
+    - JSP provides following tags:
+        1. Declaration tag:
+            - It is used to declare the variables and methods.
+            - Whatever the code we write in Declaration tag will be written outside the service() method of servlet.
+            syntax: <%! %>
+        2. Expression tag :
+            - It is used print the values of variable on the browser.
+            - We can call method inside expression tag but it should have return type anything other than void.
+            syntax: <%= %>
+        3. Scriptlet tag :
+            - Whatever we write inside Scriptlet tag will be written inside service() method of servlet.
+            - The bussiness logic should be written inside Scriptlet tag.
+            syntax: <% %>

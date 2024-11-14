@@ -140,3 +140,51 @@ How does Servlet works or working procedure of Servlet?
     1. Status code
     2. content type
     3. Actual content
+
+Servlet life cycle:
+    - From the Beginning till the end of the Servlet all the process the servlet is going to go through is known as servlet life cycle.
+    - Servlet life cycle is taken care by Web Container or Servlet Container.
+    - Servlet life cycle contains following steps:
+        1. Loading the servlet into the memory:
+            - Web Container uses Class loader to load the Servlet into the memory.
+        2. Instantiating the Servlet :
+            - The Object of Servlet will be Created by the Web Container in order to invoke service methods.
+        3. Initializing the Servlet :
+            - The Servlet will be initailized once after the Object is Created.
+            - During Initializing the init() method of the Servlet will be invoke.
+        4. Invoking the Service :
+            - Service method will be invoke and takes the Request and processes it then Produces the Response.
+        5. Destroy the Servlet :
+            - When servlet is getting unloaded from the memory, it calls destroy() method of Servlet.
+
+RequestDisptcher :
+    - RequestDisptcher is used to Dispatch the Request from one page to another page.
+    - That page either it may be Servlet -> Servlet , Servlet -> jsp , Servlet -> html , jsp -> jsp , jsp -> Servlet , jsp -> html.
+    - RequestDisptcher is an Interface present javax.servlet package.
+    - We can get an Object of RequestDisptcher using getRequestDispatcher(String URL) method present inside req Object.
+    - RequestDisptcher contains following methods:
+        1. forward(req,resp);
+        2. include(req,resp);
+note: If you want to Dispatch the Request to another servlet pass URL of another servlet in getRequestDispatcher(Servlet_URL) method.
+    If you want to Dispatch the Request to HTML page name inside getRequestDispatcher(html) method.
+    If you want to Dispatch the Request to jsp page name inside getRequestDispatcher(jsp) method.
+
+forward(req,resp);
+    - It is used to forward the Request from one page to another.
+include(req,resp);
+    - It is used to include one method inside another.
+
+Req.setAttribute(String key , Object value);
+    - It is used to set the data to the Request Object.
+    - It takes String key and Object value.
+    - We can set any type of data into the Request Object using this method. i.e. we can set integer, String, Double, java Objects also.
+
+Req.getAttribute(String key);
+    - It is used to get the data from Request Object by passing String key.
+    - It returns any type of data in Object tag.
+    - If you want to convert it into respective data type use typeCast operator. i.e DownCasting.
+
+resp.sendRedirect(String path);
+    - Whenever we want to redirect our Request to some third party websites or to some servlet pages or to some html page, we make use of sendRedirect() method present inside HttpServletResponse Object.
+    
+    
