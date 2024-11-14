@@ -140,6 +140,7 @@ How does Servlet works or working procedure of Servlet?
     1. Status code
     2. content type
     3. Actual content
+<<<<<<< HEAD
 
 Servlet life cycle:
     - From the Beginning till the end of the Servlet all the process the servlet is going to go through is known as servlet life cycle.
@@ -187,4 +188,6 @@ Req.getAttribute(String key);
 resp.sendRedirect(String path);
     - Whenever we want to redirect our Request to some third party websites or to some servlet pages or to some html page, we make use of sendRedirect() method present inside HttpServletResponse Object.
     
+=======
+>>>>>>> fce14a35dc53ef8575064273edaeccb29522fc0f
     
