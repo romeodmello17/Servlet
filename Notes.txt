@@ -140,3 +140,4 @@ How does Servlet works or working procedure of Servlet?
     1. Status code
     2. content type
     3. Actual content
+    
